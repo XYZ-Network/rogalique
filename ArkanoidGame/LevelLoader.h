@@ -8,7 +8,7 @@
 #include <memory>
 #include <map>
 
-namespace ArkanoidGame {
+namespace RogaliqueGame {
 	enum class BlockType
 	{
 		Simple,

@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 
 
-namespace ArkanoidGame {
+namespace RogaliqueGame {
 
 	ThreeHitBlock::ThreeHitBlock(const sf::Vector2f& position)
 		: SmoothDestroyableBlock(position, sf::Color::Magenta)

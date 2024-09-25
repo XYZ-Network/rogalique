@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Vector.h"
 
-namespace ArkanoidGame
+namespace RogaliqueGame
 {
 	// Helper method for organizing text items
 	enum class Orientation

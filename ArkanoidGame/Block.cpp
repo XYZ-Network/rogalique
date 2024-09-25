@@ -9,7 +9,7 @@ namespace
 	const std::string TEXTURE_ID = "platform";
 }
 
-namespace ArkanoidGame
+namespace RogaliqueGame
 {
 	Block::Block(const sf::Vector2f& position, const sf::Color& color)
 		: GameObject(SETTINGS.TEXTURES_PATH + TEXTURE_ID + ".png", position, SETTINGS.BLOCK_WIDTH, SETTINGS.BLOCK_HEIGHT)
