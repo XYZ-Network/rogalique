@@ -12,7 +12,7 @@ namespace
 namespace RogaliqueGame
 {
 	Platform::Platform(const sf::Vector2f& position)
-		: GameObject(SETTINGS.TEXTURES_PATH + TEXTURE_ID + ".png", position, SETTINGS.PLATFORM_WIDTH, SETTINGS.PLATFORM_HEIGHT)
+		: GameObject(SETTINGS.TEXTURES_PATH + TEXTURE_ID + ".png", position, (float)SETTINGS.PLATFORM_WIDTH, SETTINGS.PLATFORM_HEIGHT)
 	{}
 
 	void Platform::Update(float timeDelta)
