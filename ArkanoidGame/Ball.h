@@ -4,7 +4,7 @@
 #include "Collidable.h"
 #include "IObserver.h"
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 	class Ball final : public GameObject, public Colladiable, public IObservable
 	{

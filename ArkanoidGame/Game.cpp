@@ -7,7 +7,7 @@
 #include "GameStateMainMenu.h"
 #include "GameStateRecords.h"
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 
 	Game::Game()

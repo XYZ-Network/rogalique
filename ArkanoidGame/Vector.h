@@ -1,6 +1,6 @@
 #pragma once
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 	template<typename T>
 	struct Vector2D

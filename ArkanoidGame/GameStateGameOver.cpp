@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <sstream>
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 	void GameStateGameOverData::Init()
 	{

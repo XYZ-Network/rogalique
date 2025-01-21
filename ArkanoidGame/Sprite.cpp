@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 	void InitSprite(sf::Sprite& sprite, float desiredWidth, float desiredHeight, const sf::Texture& texture)
 	{

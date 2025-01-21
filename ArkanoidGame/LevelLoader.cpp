@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <filesystem>
 
-namespace RogaliqueGame {
+namespace ArkanoidGame {
 	Level& LevelLoader::GetLevel(int i) {
 		return levels.at(i);
 	}

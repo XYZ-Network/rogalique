@@ -2,7 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include <memory>
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 	class Colladiable {
 	protected:

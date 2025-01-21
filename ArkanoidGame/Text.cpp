@@ -1,6 +1,6 @@
 #include "Text.h"
 
-namespace RogaliqueGame
+namespace ArkanoidGame
 {
 	sf::Vector2f GetTextOrigin(const sf::Text& text, const sf::Vector2f& relativePosition)
 	{
