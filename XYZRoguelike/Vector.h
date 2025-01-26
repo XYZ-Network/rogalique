@@ -32,7 +32,7 @@ namespace XYZRoguelike
 	}
 
 	template<typename T>
-	float GetVectorLength(const Vector2D<T>& vector)
+	float GetLength(const Vector2D<T>& vector)
 	{
 		return sqrtf(vector.x * vector.x + vector.y * vector.y);
 	}

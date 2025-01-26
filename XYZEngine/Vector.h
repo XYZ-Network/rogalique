@@ -7,6 +7,28 @@ namespace XYZEngine
 	{
 		T x = (T)0;
 		T y = (T)0;
+
+		Vector2D()
+		{
+			x = (T)0;
+			y = (T)0;
+		}
+
+		Vector2D(T newX, T newY)
+		{
+			x = newX;
+			y = newY;
+		}
+
+		float GetLength()
+		{
+			return sqrtf(x * x + y * y);
+		}
+
+		float DotProduct(const Vector2D<T>& vector)
+		{
+			return x * vector.x + y * vector.y;
+		}
 	};
 
 	using Vector2Df = Vector2D<float>;
@@ -14,27 +36,51 @@ namespace XYZEngine
 	using Position = Vector2Df;
 
 	template<typename T>
-	Vector2D<T> operator+(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
+	Vector2D<T> operator+(const Vector2D<T>& left, const Vector2D<T>& right)
 	{
-		return { lhs.x + rhs.x, lhs.y + rhs.y };
+		return { left.x + right.x, left.y + right.y };
 	}
 
 	template<typename T>
-	Vector2D<T> operator-(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
+	Vector2D<T> operator-(const Vector2D<T>& left, const Vector2D<T>& right)
 	{
-		return { lhs.x - rhs.x, lhs.y - rhs.y };
+		return { left.x - right.x, left.y - right.y };
 	}
 
 	template<typename T>
-	bool operator==(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
+	Vector2D<T> operator-(const Vector2D<T>& left)
 	{
-		return lhs.x == rhs.x && lhs.y == rhs.y;
+		return { -left.x, -left.y };
 	}
 
 	template<typename T>
-	float GetVectorLength(const Vector2D<T>& vector)
+	Vector2D<T> operator*(const Vector2D<T>& left, const Vector2D<T>& right)
 	{
-		return sqrtf(vector.x * vector.x + vector.y * vector.y);
+		return { left.x * right.x, left.y * right.y }; 
+	}
+
+	template<typename T>
+	Vector2D<T> operator*(const T scalar, const Vector2D<T>& right)
+	{
+		return { scalar * right.x, scalar * right.y };
+	}
+
+	template<typename T>
+	Vector2D<T> operator*(const Vector2D<T>& left, const T scalar)
+	{
+		return { scalar * left.x, scalar * left.y };
+	}
+
+	template<typename T>
+	bool operator==(const Vector2D<T>& left, const Vector2D<T>& right)
+	{
+		return left.x == right.x && left.y == right.y;
+	}
+
+	template<typename T>
+	bool operator!=(const Vector2D<T>& left, const Vector2D<T>& right)
+	{
+		return left.x != right.x || left.y != right.y;
 	}
 
 	// This complex template allows us to convert any vector type to any other vector type (like our Vector2D to SFML's Vector and vice versa)
