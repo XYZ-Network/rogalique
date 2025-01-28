@@ -1,23 +1,65 @@
 #pragma once
-#include "SFML/Graphics.hpp"
+
+#include "TransformComponent.h"
+#include <iostream>
 
 namespace XYZEngine
 {
+	class TransformComponent;
+
 	class GameObject
 	{
 	public:
-		GameObject(const std::string& textureId, const sf::Vector2f& position, float width, float height);
-		virtual ~GameObject() = default;
+		GameObject();
+		~GameObject();
 
-		virtual void Update(float timeDelta) = 0;
-		virtual void Draw(sf::RenderWindow& window);
+		void Update(float deltaTime);
+		void Render();
 
-		const sf::Vector2f& GetPosition() const { return sprite.getPosition(); }
-		sf::FloatRect GetRect() const { return sprite.getGlobalBounds(); }
-		virtual void restart();
-	protected:
-		sf::Sprite sprite;
-		sf::Texture texture;
-		const sf::Vector2f startPosition;
+		template <typename T>
+		T* AddComponent()
+		{
+			if constexpr (!std::is_base_of<Component, T>::value)
+			{
+				std::cout << "T must be derived from Component." << std::endl;
+				return nullptr;
+			}
+
+			if constexpr (std::is_same<T, TransformComponent>::value)
+			{
+				if (GetComponent<TransformComponent>() != nullptr)
+				{
+					std::cout << "Can't add Transform, because it will break the engine loop." << std::endl;
+					return nullptr;
+				}
+			}
+
+			T* newComponent = new T(this);
+			components.push_back(newComponent);
+
+			return newComponent;
+		}
+
+		void RemoveComponent(Component* component)
+		{
+			components.erase(std::remove_if(components.begin(), components.end(), [component](Component* obj) { return obj == component; }), components.end());
+			delete component;
+			std::cout << "Deleted component";
+		}
+
+		template <typename T>
+		T* GetComponent() const
+		{
+			for (const auto& component : components)
+			{
+				if (auto casted = dynamic_cast<T*>(component))
+				{
+					return casted;
+				}
+			}
+			return nullptr;
+		}
+	private:
+		std::vector<Component*> components = {};
 	};
 }

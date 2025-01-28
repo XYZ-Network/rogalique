@@ -1,26 +1,34 @@
 #include "pch.h"
 #include "GameObject.h"
-#include "Sprite.h"
-#include <assert.h>
 
 namespace XYZEngine
 {
-	GameObject::GameObject(const std::string& texturePath, const sf::Vector2f& position, float width, float height) :
-		startPosition(position)
+	GameObject::GameObject()
 	{
-		assert(texture.loadFromFile(texturePath));
-
-		InitSprite(sprite, width, height, texture);
-		sprite.setPosition(position);
+		AddComponent<TransformComponent>();
 	}
 
-	void GameObject::Draw(sf::RenderWindow& window)
+	GameObject::~GameObject()
 	{
-		DrawSprite(sprite, window);
-	}
-	void GameObject::restart()
-	{
-		sprite.setPosition(startPosition);
+		for (auto component : components)
+		{
+			delete component;
+		}
+		components.clear();
 	}
 
+	void GameObject::Update(float deltaTime)
+	{
+		for (auto& component : components)
+		{
+			component->Update(deltaTime);
+		}
+	}
+	void GameObject::Render()
+	{
+		for (auto& component : components)
+		{
+			component->Render();
+		}
+	}
 }
