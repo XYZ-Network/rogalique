@@ -36,7 +36,7 @@ namespace XYZEngine
 
 			T* newComponent = new T(this);
 			components.push_back(newComponent);
-
+			std::cout << "Add new component: " << newComponent << std::endl;
 			return newComponent;
 		}
 

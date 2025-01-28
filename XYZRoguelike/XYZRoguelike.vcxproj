@@ -170,6 +170,7 @@
     <ClCompile Include="GameStateGameWin.cpp" />
     <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="IObserver.h" />
     <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="Platform.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="randomizer.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Game.h" />

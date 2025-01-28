@@ -18,8 +18,5 @@ namespace XYZEngine
 	private:
 		Engine();
 		~Engine() = default;
-
-	private:
-		sf::RenderWindow window;
 	};
 }
