@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <ResourceSystem.h>
 
 namespace XYZRoguelike
 {
@@ -7,13 +8,8 @@ namespace XYZRoguelike
 		gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject();
 		auto playerRenderer = gameObject->AddComponent<XYZEngine::SpriteRendererComponent>();
 
-		sf::Texture* newTexture = new sf::Texture();
-		if (newTexture->loadFromFile("Resources/Textures/ball.png"))
-		{
-			newTexture->setSmooth(true);
-			playerRenderer->SetTexture(*newTexture);
-			playerRenderer->SetPixelSize(32, 32);
-		}
+		playerRenderer->SetTexture(*XYZEngine::ResourceSystem::Instance()->GetTextureShared("ball"));
+		playerRenderer->SetPixelSize(32, 32);
 
 		auto playerCamera = gameObject->AddComponent<XYZEngine::CameraComponent>();
 		playerCamera->SetWindow(&XYZEngine::RenderSystem::Instance()->GetMainWindow());

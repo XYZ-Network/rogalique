@@ -156,6 +156,8 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="randomizer.h" />
     <ClInclude Include="RenderSystem.h" />
+    <ClInclude Include="ResourceSystem.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteRendererComponent.h" />
     <ClInclude Include="TransformComponent.h" />
@@ -175,6 +177,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="ResourceSystem.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteRendererComponent.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
