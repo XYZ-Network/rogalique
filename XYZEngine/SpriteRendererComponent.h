@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TransformComponent.h"
+#include "Vector.h"
 #include <SFML/Graphics.hpp>
 #include <memory>
 
@@ -22,6 +23,7 @@ namespace XYZEngine
 		void FlipX(bool flip);
 		void FlipY(bool flip);
 	private:
+		Vector2Df scale;
 		sf::Sprite* sprite;
 		TransformComponent* transform;
 

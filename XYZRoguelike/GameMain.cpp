@@ -6,6 +6,7 @@
 #include "Engine.h"
 #include "ResourceSystem.h"
 #include "DeveloperLevel.h"
+#include "Matrix2D.h"
 
 using namespace XYZRoguelike;
 

@@ -1,11 +1,12 @@
 #include "Player.h"
 #include <ResourceSystem.h>
+#include <SpriteColliderComponent.h>
 
 namespace XYZRoguelike
 {
 	Player::Player()
 	{
-		gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject();
+		gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Player");
 		auto playerRenderer = gameObject->AddComponent<XYZEngine::SpriteRendererComponent>();
 
 		playerRenderer->SetTexture(*XYZEngine::ResourceSystem::Instance()->GetTextureShared("ball"));
@@ -16,6 +17,10 @@ namespace XYZRoguelike
 		playerCamera->SetBaseResolution(1280, 720);
 
 		auto playerInput = gameObject->AddComponent<XYZEngine::InputComponent>();
+
+		auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
+
+		auto collider = gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
 	}
 
 	XYZEngine::GameObject* Player::GetGameObject()
