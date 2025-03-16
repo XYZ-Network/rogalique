@@ -20,6 +20,8 @@ namespace XYZRoguelike
 
 		auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
 
+		auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
+
 		auto collider = gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
 	}
 
