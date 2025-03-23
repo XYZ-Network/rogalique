@@ -18,5 +18,7 @@ namespace XYZEngine
 	private:
 		Engine();
 		~Engine() = default;
+
+		void setupLogger();
 	};
 }
