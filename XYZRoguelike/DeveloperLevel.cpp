@@ -1,5 +1,6 @@
 #include "DeveloperLevel.h"
 #include "Wall.h"
+#include "MazeGenerator.h"
 
 using namespace XYZEngine;
 
@@ -71,6 +72,10 @@ namespace XYZRoguelike
 				}
 			}
 		}
+
+		// Maze Generator
+		MazeGenerator mazeGenerator(width, height, this);
+		mazeGenerator.Generate();
 
 		player = std::make_unique<Player>(std::forward<XYZEngine::Vector2Df>({ width / 2 * 128.f, height / 2 * 128.f }));
 		music = std::make_unique<Music>("music");
