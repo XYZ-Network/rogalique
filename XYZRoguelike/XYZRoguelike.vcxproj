@@ -171,6 +171,7 @@
     <ClCompile Include="GameStateData.cpp" />
     <ClCompile Include="GameStateGameWin.cpp" />
     <ClCompile Include="LevelLoader.cpp" />
+    <ClCompile Include="MazeGenerator.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="IDelayedAction.h" />
     <ClInclude Include="IObserver.h" />
     <ClInclude Include="LevelLoader.h" />
+    <ClInclude Include="MazeGenerator.h" />
     <ClInclude Include="Music.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
